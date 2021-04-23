@@ -4,18 +4,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="popup.css" rel="stylesheet" />
     <title>Document</title>
   </head>
-  <body
-    style="
-      width: 300px;
-      padding-left: 5px;
-      padding-right: 5px;
-      background-color: #202020;
-      color: white;
-    "
-  >
-    <div id="container"></div>
+  <body>
+    <div id="global_container">
+      <div id="tools_container">
+        <h1>Tools</h1>
+        <div class="tool">
+          <label>Filter by tittle</label>
+          <input id="name_filter" />
+        </div>
+        <div class="tool">
+          <label>Filter by count</label>
+          <div style="display: flex">
+            <label>set max of range:</label
+            ><input id="range_max" value="10" type="number" />
+          </div>
+          <input
+            id="count_filter"
+            type="range"
+            min="1"
+            max="10"
+            step="1"
+            value="1"
+          />
+        </div>
+        <button id="sort" reverse="0">Sort</button>
+      </div>
+      <div id="chanels_container"></div>
+    </div>
     <script src="popup.js"></script>
   </body>
 </html>
