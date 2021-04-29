@@ -26,6 +26,7 @@ setInterval(async () => {
   let new_href = window.location.href;
   //сравниваем два href, и если они зменились, то сетаем в локалку данные;
   if (last_href != new_href && new_href.includes("watch")) {
+    last_href = new_href;
     let [chanel, img] = await get_chanel_info(new_href);
     chrome.storage.local.get([chanel], (data) => {
       chrome.storage.local.set({
@@ -34,6 +35,5 @@ setInterval(async () => {
           : [1, img],
       });
     });
-    last_href = new_href;
   }
 }, 4000);
