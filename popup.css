@@ -22,13 +22,19 @@ h1 {
   padding: 4px;
   /* border-radius: 5px; */
 }
+
+.tool > input {
+  margin-top: 4px;
+}
 label {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 #range_max {
-  height: 15px;
-  width: 15px;
+  height: 14px;
+  margin-top: 5px;
+  width: 14px;
+  font-size: 12px;
   border-radius: 3px;
   margin-left: 4px;
   padding: 4;
@@ -47,13 +53,14 @@ label {
   margin-top: 5px;
   border: 0;
   outline: 0;
-  transition: 0.4s;
+  transition: 0.3s;
   padding: 4px;
   font-weight: 550;
   cursor: pointer;
 }
 #sort:hover {
-  background-color: rgb(224, 215, 215);
+  background-color: #0075ff;
+  color: white;
 }
 
 .chanel_element {
@@ -75,13 +82,12 @@ label {
   margin-right: 5px;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+#range_max::-webkit-outer-spin-button,
+#range_max::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
+#name_filter:focus {
+  outline: #0075ff 1px solid;
 }

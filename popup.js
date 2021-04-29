@@ -1,6 +1,5 @@
-const sort = (data, chanel, chanel_n, r_sort) => {
-  console.log(r_sort);
-  if (r_sort) {
+const sort = (data, chanel, chanel_n, revers) => {
+  if (revers) {
     return data[chanel][0] - data[chanel_n][0];
   } else return data[chanel_n][0] - data[chanel][0];
 };
@@ -13,6 +12,7 @@ const filter = (data, chanel, name_f = "", count_f = 1) => {
 
 const render_chanels = (reverse, name_f, count_f) => {
   const chanels_container = document.getElementById("chanels_container");
+
   chanels_container.innerHTML = `<div style="width: 310px;"></div>`;
   chrome.storage.local.get(null, (data) => {
     let keys = Object.keys(data);
@@ -26,12 +26,17 @@ const render_chanels = (reverse, name_f, count_f) => {
           chanel_element.innerHTML = `<img src=${data[chanel][1]} /><span style="line-height: 1.5">${chanel}: ${data[chanel][0]}</span>`;
           chanels_container.appendChild(chanel_element);
         });
-    } else document.body.innerText = "Start watch video!";
+    } else {
+      const tools_container = document.getElementById("tools_container");
+      tools_container.style.display = "none";
+      document.body.innerText = "Start watch video!";
+    }
   });
 };
 
 window.onload = () => {
   render_chanels();
+
   let sort_button = document.getElementById("sort");
   let name_filter = document.getElementById("name_filter");
   let count_filter = document.getElementById("count_filter");

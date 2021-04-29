@@ -1,6 +1,6 @@
 {
-    "name": "answers",
-    "description": "PrP",
+    "name": "youtube_counter",
+    "description": "This is a simple app to count the number of videos watched on a channel",
     "version": "2.0",
     "manifest_version": 3,
     "content_scripts": [
