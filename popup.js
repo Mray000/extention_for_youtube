@@ -70,6 +70,7 @@ window.onload = () => {
     render_chanels(get_reverse(), get_name(), get_count());
   });
   count_filter.addEventListener("change", () => {
+    document.getElementById("current_count").innerText = get_count();
     render_chanels(get_reverse(), get_name(), get_count());
   });
 

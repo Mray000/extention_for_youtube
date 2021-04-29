@@ -97,6 +97,10 @@ label {
   -webkit-appearance: none;
   margin: 0;
 }
+#current_count {
+  position: absolute;
+  line-height: 2;
+}
 
 #name_filter:focus {
   outline: #0075ff 1px solid;
