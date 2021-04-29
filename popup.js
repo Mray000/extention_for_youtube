@@ -10,6 +10,11 @@ const filter = (data, chanel, name_f = "", count_f = 1) => {
   return true;
 };
 
+const remove_chanel = (e) => {
+  chrome.storage.local.remove(e.target.dataset.chanel);
+  render_chanels();
+};
+
 const render_chanels = (reverse, name_f, count_f) => {
   const chanels_container = document.getElementById("chanels_container");
 
@@ -23,7 +28,14 @@ const render_chanels = (reverse, name_f, count_f) => {
         .forEach((chanel) => {
           const chanel_element = document.createElement("div");
           chanel_element.className = "chanel_element";
-          chanel_element.innerHTML = `<img src=${data[chanel][1]} /><span style="line-height: 1.5">${chanel}: ${data[chanel][0]}</span>`;
+          chanel_element.innerHTML = `<div class="create_element_data"><img src=${data[chanel][1]} /><span style="line-height: 1.5">${chanel}: ${data[chanel][0]}</span></div>`;
+          const cross = document.createElement("div");
+          cross.innerText = "x";
+          cross.setAttribute("data-chanel", chanel);
+          cross.style.marginRight = "5px";
+          cross.style.cursor = "pointer";
+          cross.addEventListener("click", remove_chanel);
+          chanel_element.appendChild(cross);
           chanels_container.appendChild(chanel_element);
         });
     } else {

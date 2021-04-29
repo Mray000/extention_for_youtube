@@ -58,6 +58,7 @@ label {
   font-weight: 550;
   cursor: pointer;
 }
+
 #sort:hover {
   background-color: #0075ff;
   color: white;
@@ -65,17 +66,26 @@ label {
 
 .chanel_element {
   display: flex;
+  justify-content: space-between;
   background-color: white;
   width: 300px;
-  border-radius: 5px;
-  margin-top: 5px;
-  padding-left: 3px;
-  font-size: 16px;
-  font-weight: 500;
   color: #202020;
-  padding: 4px;
+  padding: 3px;
+  font-weight: 650;
+  font-size: 17px;
+  margin-top: 5px;
+  border-radius: 5px;
+  align-items: center;
 }
-.chanel_element > img {
+.create_element_data {
+  font-size: 17px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.create_element_data > img {
   width: 25px;
   height: 25px;
   border-radius: 100%;
